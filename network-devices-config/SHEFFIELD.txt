@@ -1,0 +1,66 @@
+
+
+hostname SHEFFIELD
+
+interface Tunnel0
+ no shutdown
+ ip address 172.18.10.4 255.255.255.0
+ no ip redirects
+ ip mtu 1400
+ ip nhrp authentication DMVPN
+ ip nhrp map multicast 69.18.20.2
+ ip nhrp map 172.18.10.1 69.18.20.2
+ ip nhrp network-id 1
+ ip nhrp nhs 172.18.10.1
+ ip tcp adjust-mss 1300
+ tunnel source Ethernet0/0
+ tunnel mode gre multipoint
+ tunnel key 10000
+!
+interface Tunnel1
+ no shutdown
+ ip address 172.19.10.4 255.255.255.0
+ no ip redirects
+ ip mtu 1400
+ ip nhrp authentication DMVPN
+ ip nhrp map multicast 69.18.20.6
+ ip nhrp map 172.19.10.1 69.18.20.6
+ ip nhrp network-id 2
+ ip nhrp nhs 172.19.10.1
+ ip tcp adjust-mss 1300
+ tunnel source Ethernet0/0
+ tunnel mode gre multipoint
+ tunnel key 10000
+!
+interface Ethernet0/0
+ no shutdown
+ ip address 69.18.20.34 255.255.255.252
+ ip helper-address 172.17.0.10
+ duplex auto
+!
+interface Ethernet0/1
+ no shutdown
+ ip address 10.10.30.1 255.255.255.0
+ duplex auto
+!
+!
+router eigrp 100
+ default-metric 1 1 1 1 1
+ network 10.10.30.1 0.0.0.0
+ network 172.18.10.4 0.0.0.0
+ passive-interface Tunnel0
+!
+i
+ip route 0.0.0.0 0.0.0.0 69.18.20.33
+!
+!
+!
+username admin password cisco
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+password sanya@123
+transport input all
+ login
+end

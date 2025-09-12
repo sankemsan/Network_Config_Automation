@@ -1,0 +1,219 @@
+
+hostname FINANCE-ACCESS
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+
+interface Ethernet0/0
+ no shutdown
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet0/1
+ no shutdown
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet0/2
+ no shutdown
+!
+interface Ethernet0/3
+ no shutdown
+!
+interface Ethernet1/0
+ no shutdown
+!
+interface Ethernet1/1
+ no shutdown
+!
+interface Ethernet1/2
+ no shutdown
+!
+interface Ethernet1/3
+ no shutdown
+!
+interface Ethernet2/0
+ no shutdown
+!
+interface Ethernet2/1
+ no shutdown
+!
+interface Ethernet2/2
+ no shutdown
+!
+interface Ethernet2/3
+ no shutdown
+!
+interface Ethernet3/0
+ no shutdown
+!
+interface Ethernet3/1
+ no shutdown
+!
+interface Ethernet3/2
+ no shutdown
+!
+interface Ethernet3/3
+ no shutdown
+!
+interface Ethernet4/0
+ no shutdown
+!
+interface Ethernet4/1
+ no shutdown
+!
+interface Ethernet4/2
+ no shutdown
+!
+interface Ethernet4/3
+ no shutdown
+!
+interface Ethernet5/0
+ no shutdown
+!
+interface Ethernet5/1
+ no shutdown
+!
+interface Ethernet5/2
+ no shutdown
+!
+interface Ethernet5/3
+ no shutdown
+!
+interface Ethernet6/0
+ no shutdown
+!
+interface Ethernet6/1
+ no shutdown
+!
+interface Ethernet6/2
+ no shutdown
+!
+interface Ethernet6/3
+ no shutdown
+!
+interface Ethernet7/0
+ no shutdown
+!
+interface Ethernet7/1
+ no shutdown
+!
+interface Ethernet7/2
+ no shutdown
+!
+interface Ethernet7/3
+ no shutdown
+!
+interface Ethernet8/0
+ no shutdown
+!
+interface Ethernet8/1
+ no shutdown
+!
+interface Ethernet8/2
+ no shutdown
+!
+interface Ethernet8/3
+ no shutdown
+!
+interface Ethernet9/0
+ no shutdown
+!
+interface Ethernet9/1
+ no shutdown
+!
+interface Ethernet9/2
+ no shutdown
+!
+interface Ethernet9/3
+ no shutdown
+!
+interface Ethernet10/0
+ no shutdown
+!
+interface Ethernet10/1
+ no shutdown
+!
+interface Ethernet10/2
+ no shutdown
+!
+interface Ethernet10/3
+ no shutdown
+!
+interface Ethernet11/0
+ no shutdown
+!
+interface Ethernet11/1
+ no shutdown
+!
+interface Ethernet11/2
+ no shutdown
+!
+interface Ethernet11/3
+ no shutdown
+!
+interface Ethernet12/0
+ no shutdown
+!
+interface Ethernet12/1
+ no shutdown
+!
+interface Ethernet12/2
+ no shutdown
+!
+interface Ethernet12/3
+ no shutdown
+!
+interface Ethernet13/0
+ no shutdown
+!
+interface Ethernet13/1
+ no shutdown
+!
+interface Ethernet13/2
+ no shutdown
+!
+interface Ethernet13/3
+ no shutdown
+!
+interface Ethernet14/0
+ no shutdown
+!
+interface Ethernet14/1
+ no shutdown
+!
+interface Ethernet14/2
+ no shutdown
+!
+interface Ethernet14/3
+ no shutdown
+!
+interface Ethernet15/0
+ no shutdown
+!
+interface Ethernet15/1
+ no shutdown
+!
+interface Ethernet15/2
+ no shutdown
+!
+interface Ethernet15/3
+ no shutdown
+!
+interface Vlan50
+ no shutdown
+ ip address 10.10.50.7 255.255.255.0
+!
+username admin password cisco
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+password sanya@123
+transport input all
+ login
+!
+end

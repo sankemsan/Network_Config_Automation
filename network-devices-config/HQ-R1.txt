@@ -1,0 +1,52 @@
+
+hostname HQ-R1
+no aaa new-model
+enable secret sanya@123
+!
+interface Tunnel0
+ no shutdown
+ ip address 172.18.10.1 255.255.255.0
+ ip helper-address 172.17.0.10
+ no ip redirects
+ ip mtu 1400
+ ip nhrp authentication DMVPN
+ ip nhrp network-id 1
+ ip nhrp redirect
+ no ip split-horizon
+ ip tcp adjust-mss 1300
+ tunnel source Ethernet0/1
+ tunnel mode gre multipoint
+ tunnel key 10000
+!
+
+!
+interface Ethernet0/0.40
+ no shutdown
+ encapsulation dot1Q 40
+ ip address 10.10.40.4 255.255.255.248
+!
+interface Ethernet0/1
+ no shutdown
+ ip address 69.18.20.2 255.255.255.252
+ duplex auto
+!
+!
+i
+!
+router eigrp 100
+ network 10.10.40.4 0.0.0.0
+ network 172.18.10.1 0.0.0.0
+ip route 0.0.0.0 0.0.0.0 69.18.20.1
+!
+username admin password cisco
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+password sanya@123
+transport input all
+ login
+ transport input none
+!
+!
+end

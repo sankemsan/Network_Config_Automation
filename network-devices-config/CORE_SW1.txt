@@ -1,0 +1,97 @@
+
+!
+hostname CORE_SW1
+!
+interface Port-channel1
+ no shutdown
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet0/0
+ no shutdown
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface Ethernet0/1
+ no shutdown
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface Ethernet0/2
+ no shutdown
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet0/3
+ no shutdown
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+!
+interface Vlan10
+ no shutdown
+ ip address 172.16.10.1 255.255.255.0
+ ip helper-address 172.17.0.10 
+ standby 1 ip 172.16.10.3
+ standby 1 priority 255
+ standby 1 preempt
+!
+interface Vlan20
+ no shutdown
+ ip address 172.16.20.1 255.255.255.0
+ ip helper-address 172.17.0.10 
+ standby 2 ip 172.16.20.3
+ standby 2 priority 255
+ standby 2 preempt
+!
+interface Vlan30
+ no shutdown
+ ip address 172.16.30.1 255.255.255.0
+ ip helper-address 172.17.0.10 
+ standby 3 ip 172.16.30.3
+ standby 3 priority 255
+ standby 3 preempt
+!
+interface Vlan40
+ no shutdown
+ ip address 10.10.40.1 255.255.255.248
+ standby 4 ip 10.10.40.3
+ standby 4 priority 255
+ standby 4 preempt
+!
+interface Vlan50
+ no shutdown
+ ip address 10.10.50.1 255.255.255.0
+ standby 5 ip 10.10.50.3
+ standby 5 priority 255
+ standby 5 preempt
+!
+interface Vlan70
+ no shutdown
+ ip address 172.17.0.1 255.255.255.0
+ standby 6 ip 172.17.0.3
+ standby 6 priority 255
+ standby 6 preempt
+!
+!
+router eigrp 100
+ network 10.10.40.1 0.0.0.0
+ network 10.10.50.1 0.0.0.0
+ network 172.16.10.1 0.0.0.0
+ network 172.16.20.1 0.0.0.0
+ network 172.16.30.1 0.0.0.0
+ network 172.17.0.1 0.0.0.0
+!
+!
+username admin password cisco
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+password sanya@123
+transport input all
+ login
+!
+end

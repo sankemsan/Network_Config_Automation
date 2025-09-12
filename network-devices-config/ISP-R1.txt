@@ -1,0 +1,42 @@
+hostname ISP-R1
+no aaa new-model
+interface Ethernet0/0
+ no shutdown
+ ip address 69.18.20.1 255.255.255.252
+ duplex auto
+!
+interface Ethernet0/1
+ no shutdown
+ ip address 69.18.20.5 255.255.255.252
+ duplex auto
+!
+interface Ethernet0/2
+ no shutdown
+ ip address 69.18.20.9 255.255.255.252
+ duplex auto
+!
+interface Ethernet0/3
+ no shutdown
+ ip address 69.18.20.13 255.255.255.252
+ duplex auto
+!
+!
+router bgp 100
+ bgp log-neighbor-changes
+ network 69.18.20.0 mask 255.255.255.252
+ network 69.18.20.4 mask 255.255.255.252
+ neighbor 69.18.20.10 remote-as 200
+ neighbor 69.18.20.10 next-hop-self
+ neighbor 69.18.20.14 remote-as 300
+ neighbor 69.18.20.14 next-hop-self
+
+
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

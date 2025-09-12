@@ -1,3 +1,206 @@
+from netmiko import ConnectHandler
+
+# These are the DMVPN network devices
+devices = [
+    {
+        "device_type": "cisco_ios",
+        "ip": "172.18.10.1",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",    
+        "hostname": "HQ-R1"
+    },
+    {
+        "device_type": "cisco_ios",
+        "ip": "172.19.10.1",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "HQ-DR"
+    },
+
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "172.18.10.2",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "LONDON"
+    },
+
+   {
+        "device_type": "cisco_ios",
+        "ip": "172.18.10.3",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "MANCHESTER"
+    },
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "172.18.10.4",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "SHEFFIELD"
+    },
+
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "69.18.20.1",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "ISP-R1"
+    },
+    {
+        "device_type": "cisco_ios",
+        "ip": "69.18.20.10",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "ISP-R2"
+    },
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "69.18.20.14",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "ISP-R3"
+    },
+  
+    {
+        "device_type": "cisco_ios",
+        "ip": "69.18.20.18",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "ISP-R4"
+    },
+
+# These are the CORE NETWORK SWITCHES 
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.1",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",    
+        "hostname": "CORE-SW1"
+    },
+    {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.2",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "CORE-SW2"
+    },
+  
+# These are the network DISTRIBUTION SWITCHES 
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.7",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",    
+        "hostname": "DST-SW1"
+    },
+    {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.8",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "DST-SW2"
+    },
+ 
+# These are the network ACCESS LAYER SWITCHES 
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.4",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",    
+        "hostname": "IT-ACCESS"
+    },
+    {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.5",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "ADMIN-ACCESS"
+    },
+
+  {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.6",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "FINANCE-ACCESS"
+    },
+
+
+# These are the network DEMILITARISED ZONE SWITCHES 
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.9",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",    
+        "hostname": "DMZ-SW1"
+    },
+    {
+        "device_type": "cisco_ios",
+        "ip": "10.10.50.10",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "DMZ-SW2"
+    },
+  
+
+#GOOGLE, VODACOM AND ORANGE DEVICES CONFIGURATIONS ( PUBLIC INTERNET SERVICE PROVIDER)
+
+    {
+        "device_type": "cisco_ios",
+        "ip": "20.15.60.1",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",    
+        "hostname": "VODAFONE"
+    },
+    {
+        "device_type": "cisco_ios",
+        "ip": "20.15.60.2",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "GOOGLE"
+    },
+
+  {
+        "device_type": "cisco_ios",
+        "ip": "88.20.16.2",   
+        "username": "admin",
+        "password": "cisco",
+        "secret": "sanya@123",
+        "hostname": "ORANGE"
+    },
+
+  ]
+
+
 # Load configs from the file you uploaded
 def load_configs(file_path):
     configs = {}
@@ -14,7 +217,7 @@ def load_configs(file_path):
 def configs_device(file_path, hostname)
 	for file_name in file_path:
 		if hostname == file_name
-			configs = load_configs("/mnt/data/.txt")
+			configs = load_configs("/Documents/GLOBAL TALENT/Network_Config_Automation/network-config/.txt")
 		elif
 			print(f"There is no config_file for {hostname}")
 	return configs_devices
