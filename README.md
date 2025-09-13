@@ -36,4 +36,7 @@ This readme file contains the entire automated configurations of the DMVPN and t
  - Access Layer switch : This is situated at the lowest layer of the lowest layer of the network ,it accomodated the users and allows them to connect and interface with the network
  - Firewall : It helps to create rules in the network for security purposes
  - Servers : it is used for different purposes in the network such as DHCP , Applications, DNS etc. 
+ - vscode was used for the script writing
+ ## Devices Configurations location
+ ![network-devices-config](./network-devices-config)
 ## OutCome
