@@ -1,0 +1,50 @@
+import json
+from netmiko import ConnectHandler
+
+# Load devices from file created by GitHub Action
+with open("devices.json", "r") as f:
+    devices = json.load(f)
+    
+# Load configs from the file you uploaded
+def load_configs(file_path):
+    configs = {}
+    current_device = None
+    with open(file_path, "r") as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("hostname"):
+                current_device = line.split()[1]
+                configs[current_device] = []
+            elif current_device:
+                configs[current_device].append(line)
+    return configs
+def configs_device(file_path, hostname)
+	for file_name in file_path:
+		if hostname == file_name
+			configs = load_configs("sankemsan/Network_Config_Automation/network-devices-config/.txt")
+		elif
+			print(f"There is no config_file for {hostname}")
+	return configs_devices
+
+configs_devices(file_path, hostname)
+
+# Push configs to devices
+for device in devices:
+    hostname = device["hostname"]
+    if hostname not in configs:
+        print(f" No config found for {hostname}, skipping.")
+        continue
+
+    print(f"Connecting to {hostname} at {device['ip']} ...")
+    net_connect = ConnectHandler(**device)
+    net_connect.enable()
+
+    print(f"Pushing configuration to {hostname}...")
+    output = net_connect.send_config_set(configs[hostname])                                                                    
+    print(output)
+    def save_config ()
+       copy running-config startup-config
+      return save_config
+    net_connect.save_config()
+    net_connect.disconnect()
+    print(f"Configuration applied successfully to {hostname}\n")
