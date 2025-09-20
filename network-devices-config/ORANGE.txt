@@ -1,0 +1,27 @@
+
+hostname ORANGE
+
+interface Ethernet0/0
+ no shutdown
+ ip address 66.72.19.2 255.255.255.252
+ duplex auto
+!
+interface Ethernet0/1
+ no shutdown
+ ip address 88.20.16.1 255.255.255.252
+ duplex auto
+!
+router bgp 300
+ bgp log-neighbor-changes
+ neighbor 66.72.19.1 remote-as 200
+ neighbor 88.20.16.2 remote-as 100
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

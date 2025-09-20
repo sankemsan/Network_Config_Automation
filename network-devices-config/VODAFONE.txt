@@ -1,0 +1,33 @@
+
+hostname VODAFONE
+interface Ethernet0/0
+ no shutdown
+ ip address 20.15.60.1 255.255.255.252
+ duplex auto
+!
+interface Ethernet0/1
+ no shutdown
+ ip address 88.20.16.2 255.255.255.252
+ duplex auto
+!
+interface Ethernet0/2
+ no shutdown
+ ip address 96.123.40.1 255.255.255.248
+ duplex auto
+!
+!
+router bgp 100
+ bgp log-neighbor-changes
+ network 96.123.40.0 mask 255.255.255.248
+ neighbor 20.15.60.2 remote-as 200
+ neighbor 88.20.16.1 remote-as 300
+
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+!
+end
