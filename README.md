@@ -22,7 +22,7 @@ This readme file contains the entire automated configurations of the DMVPN and t
 - To configure network distribution layer switches using automation 
 - To automate the configurations of network Core layer switches using automation
 - To automate the configurations of network access layer switches using automation
-- To configure routing protocol such as open shortest path first (OSPF) using automation
+- To configure routing protocol such as Extended Interior Gateway Routing Protocol (EIGRP) using automation
 - To automate the configurations of routing protocol such as Border Gateway Protocol (BGP)
 - To automate the connfigurations of Dynamic Multipoints Virtual Private Networks (DMVPN)
 - 
