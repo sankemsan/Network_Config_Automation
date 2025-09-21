@@ -176,7 +176,7 @@ devices = [
         "username": "admin",
         "password": "cisco",
         "secret": "sanya@123",    
-        "hostname": "VODAFONE"
+        "hostname": "MAINONE"
     },
     {
         "device_type": "cisco_ios",
