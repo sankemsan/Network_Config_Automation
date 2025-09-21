@@ -18,8 +18,7 @@ This readme file contains the entire automated configurations of the DMVPN and t
 - The aim of this project is to configure and implement different network technologies using automation
 
 ## Objectives
-- To configure 
-- routers using automation methods
+- To configure routers using automation methods
 - To configure network distribution layer switches using automation 
 - To automate the configurations of network Core layer switches using automation
 - To automate the configurations of network access layer switches using automation
@@ -40,3 +39,7 @@ This readme file contains the entire automated configurations of the DMVPN and t
  ## Devices Configurations location
  ![network-devices-config](./network-devices-config)
 ## OutCome
+By running the script , the devices would be contacted using their ip addresses and the hostname and the configurations files would be picked and push to the target devices and the jobs which could take hours or days to complete would be done within minutes.
+# NB:
+The devices such as users workstations (P),servers and firewall are runing operating systems which did not allow their configurations to be dispayed here becuase this is just an emulated or simulator . However the major targets are the routers and the switches configurations which are the major devices in this project prototype.
+I was able to present this prototype becuase I played a leading roles in implementing this project in Cyberspace Limited in Nigeria in  2021. I would not be able to showcase more than this about the project based on the companys intellectual property policies. 

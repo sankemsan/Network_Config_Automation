@@ -7,7 +7,7 @@ devices = [
         "ip": "172.18.10.1",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",    
+        "secret": "Cyber@123",    
         "hostname": "HQ-R1"
     },
     {
@@ -15,7 +15,7 @@ devices = [
         "ip": "172.19.10.1",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "HQ-DR"
     },
 
@@ -25,8 +25,8 @@ devices = [
         "ip": "172.18.10.2",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
-        "hostname": "LONDON"
+        "secret": "Cyber@123",
+        "hostname": "ABUJA"
     },
 
    {
@@ -34,8 +34,8 @@ devices = [
         "ip": "172.18.10.3",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
-        "hostname": "MANCHESTER"
+        "secret": "Cyber@123",
+        "hostname": "LAGOS"
     },
 
     {
@@ -43,8 +43,8 @@ devices = [
         "ip": "172.18.10.4",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
-        "hostname": "SHEFFIELD"
+        "secret": "Cyber@123",
+        "hostname": "KANO"
     },
 
 
@@ -53,7 +53,7 @@ devices = [
         "ip": "69.18.20.1",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "ISP-R1"
     },
     {
@@ -61,7 +61,7 @@ devices = [
         "ip": "69.18.20.10",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "ISP-R2"
     },
 
@@ -70,7 +70,7 @@ devices = [
         "ip": "69.18.20.14",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "ISP-R3"
     },
   
@@ -79,7 +79,7 @@ devices = [
         "ip": "69.18.20.18",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "ISP-R4"
     },
 
@@ -90,7 +90,7 @@ devices = [
         "ip": "10.10.50.1",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",    
+        "secret": "Cyber@123",    
         "hostname": "CORE-SW1"
     },
     {
@@ -98,7 +98,7 @@ devices = [
         "ip": "10.10.50.2",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "CORE-SW2"
     },
   
@@ -109,7 +109,7 @@ devices = [
         "ip": "10.10.50.7",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",    
+        "secret": "Cyber@123",    
         "hostname": "DST-SW1"
     },
     {
@@ -117,7 +117,7 @@ devices = [
         "ip": "10.10.50.8",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "DST-SW2"
     },
  
@@ -128,7 +128,7 @@ devices = [
         "ip": "10.10.50.4",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",    
+        "secret": "Cyber@123",    
         "hostname": "IT-ACCESS"
     },
     {
@@ -136,7 +136,7 @@ devices = [
         "ip": "10.10.50.5",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "ADMIN-ACCESS"
     },
 
@@ -145,7 +145,7 @@ devices = [
         "ip": "10.10.50.6",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "FINANCE-ACCESS"
     },
 
@@ -157,7 +157,7 @@ devices = [
         "ip": "10.10.50.9",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",    
+        "secret": "Cyber@123",    
         "hostname": "DMZ-SW1"
     },
     {
@@ -165,7 +165,7 @@ devices = [
         "ip": "10.10.50.10",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "DMZ-SW2"
     },
   
@@ -177,15 +177,15 @@ devices = [
         "ip": "20.15.60.1",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",    
-        "hostname": "VODAFONE"
+        "secret": "Cyber@123",    
+        "hostname": "MAINONE"
     },
     {
         "device_type": "cisco_ios",
         "ip": "20.15.60.2",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "GOOGLE"
     },
 
@@ -194,7 +194,7 @@ devices = [
         "ip": "88.20.16.2",   
         "username": "admin",
         "password": "cisco",
-        "secret": "sanya@123",
+        "secret": "Cyber@123",
         "hostname": "ORANGE"
     },
 
