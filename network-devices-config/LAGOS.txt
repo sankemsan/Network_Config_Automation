@@ -1,8 +1,9 @@
-hostname LONDON
+
+hostname MANCHESTER
+no aaa new-model
 interface Tunnel0
  no shutdown
- ip address 172.18.10.2 255.255.255.0
- ip helper-address 172.17.0.10
+ ip address 172.18.10.3 255.255.255.0
  no ip redirects
  ip mtu 1400
  ip nhrp authentication DMVPN
@@ -10,7 +11,6 @@ interface Tunnel0
  ip nhrp map 172.18.10.1 69.18.20.2
  ip nhrp network-id 1
  ip nhrp nhs 172.18.10.1
- no ip split-horizon
  ip tcp adjust-mss 1300
  tunnel source Ethernet0/0
  tunnel mode gre multipoint
@@ -18,8 +18,7 @@ interface Tunnel0
 !
 interface Tunnel1
  no shutdown
- ip address 172.19.10.2 255.255.255.0
- ip helper-address 172.17.0.10
+ ip address 172.19.10.3 255.255.255.0
  no ip redirects
  ip mtu 1400
  ip nhrp authentication DMVPN
@@ -34,22 +33,32 @@ interface Tunnel1
 !
 interface Ethernet0/0
  no shutdown
- ip address 69.18.20.26 255.255.255.252
+ ip address 69.18.20.30 255.255.255.252
+ ip helper-address 172.17.0.10
  duplex auto
 !
 interface Ethernet0/1
  no shutdown
- ip address 10.10.10.1 255.255.255.0
+ ip address 10.10.20.1 255.255.255.0
  duplex auto
-
-ip route 0.0.0.0 0.0.0.0 69.18.20.25
 !
+router eigrp 100
+ default-metric 1 1 1 1 1
+ network 10.10.20.1 0.0.0.0
+ network 172.18.10.3 0.0.0.0
+ passive-interface Tunnel0
+!
+!
+ip route 0.0.0.0 0.0.0.0 69.18.20.29
+!
+
 username admin password cisco
 line con 0
  logging synchronous
 line aux 0
 line vty 0 4
-password sanya@123
+password Cyber@258
 transport input all
  login
+
 end

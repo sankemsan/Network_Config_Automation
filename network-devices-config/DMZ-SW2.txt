@@ -54,7 +54,7 @@ line con 0
  logging synchronous
 line aux 0
 line vty 0 4
-password sanya@123
+password Cyber@258
 transport input all
  login
 !

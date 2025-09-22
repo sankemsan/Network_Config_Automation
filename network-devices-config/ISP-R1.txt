@@ -31,12 +31,14 @@ router bgp 100
  neighbor 69.18.20.14 next-hop-self
 
 
+username admin password cisco
 line con 0
  logging synchronous
 line aux 0
 line vty 0 4
+password Cyber@258
+transport input all
  login
- transport input none
-!
+
 !
 end

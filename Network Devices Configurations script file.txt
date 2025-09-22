@@ -169,35 +169,7 @@ devices = [
         "hostname": "DMZ-SW2"
     },
   
-
-#GOOGLE, VODACOM AND ORANGE DEVICES CONFIGURATIONS ( PUBLIC INTERNET SERVICE PROVIDER)
-
-    {
-        "device_type": "cisco_ios",
-        "ip": "20.15.60.1",   
-        "username": "admin",
-        "password": "cisco",
-        "secret": "Cyber@123",    
-        "hostname": "MAINONE"
-    },
-    {
-        "device_type": "cisco_ios",
-        "ip": "20.15.60.2",   
-        "username": "admin",
-        "password": "cisco",
-        "secret": "Cyber@123",
-        "hostname": "GOOGLE"
-    },
-
-  {
-        "device_type": "cisco_ios",
-        "ip": "88.20.16.2",   
-        "username": "admin",
-        "password": "cisco",
-        "secret": "Cyber@123",
-        "hostname": "ORANGE"
-    },
-
+  
   ]
 
 
