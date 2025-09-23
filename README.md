@@ -15,7 +15,7 @@ The Border Gateway Protocol (BGP) is the main protocol used to share information
 This readme file contains the entire automated configurations of the DMVPN and the Enterprise networks in the diagram.  
 ![Topology](./Topology.png)
 ## Aim
-- The aim of this project is to configure and implement different network technologies using automation
+- The aim of this project is to configure and implement enterprise networks using different network technologies with automation
 
 ## Objectives
 - To configure routers using automation methods
@@ -43,4 +43,4 @@ By running the script , the devices would be contacted using their ip addresses 
 # NB:
 The devices such as users workstations (P),servers and firewall are runing operating systems which did not allow their configurations to be dispayed here becuase this is just an emulated or simulator . However the major targets are the routers and the switches configurations which are the major devices in this project prototype.
 I was able to present this prototype becuase I played a leading roles in implementing this project in Cyberspace Limited in Nigeria in  2021. I would not be able to showcase more than this about the project based on the companys intellectual property policies. 
-All the configurations files , script, topology , README  are all sited in my local computer and all of them are push into my github and could be located following this link : https://github.com/sankemsan/Network_Config_Automation
+All the configurations files , script, topology , README  are all sited in my local computer and all of them are push into my github and could be located by using this link : https://github.com/sankemsan/Network_Config_Automation

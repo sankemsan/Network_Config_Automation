@@ -1,36 +1,56 @@
 hostname ABUJA
+
+crypto ikev2 proposal CYBER-IKEV2
+ encryption aes-cbc-256
+ integrity sha256
+ group 14
+
+crypto ikev2 policy 6
+ proposal CYBER-IKEV2
+
+crypto ikev2 keyring CYBER-DMVPN-KEY
+ peer HQ-R1
+  address 69.18.20.2
+  pre-shared-key CYBERPUBKEY1
+ peer HQ-DR
+  address 69.18.20.6
+  pre-shared-key CYBERPUBKEY2
+
+crypto ikev2 profile CYBER-IKEV2-DMVPN
+ match identity remote address 69.18.20.2 255.255.255.252
+ match identity remote address 69.18.20.6 255.255.255.252
+ authentication local pre-share
+ authentication remote pre-share
+ keyring local CYBER-DMVPN-KEY
+
+crypto ipsec transform-set CYBER-DMVPN-CONNECT esp-aes 256 esp-sha256-hmac
+ mode transport
+!
+crypto ipsec profile  CYBER-DMVPN-PROFILE
+ set transform-set CYBER-DMVPN-CONNECT
+ set ikev2-profile CYBER-IKEV2-DMVPN
+!
 interface Tunnel0
+description CONNECTION TO HQ-R1 and HQ-DR
  no shutdown
  ip address 172.18.10.2 255.255.255.0
  ip helper-address 172.17.0.10
  no ip redirects
  ip mtu 1400
- ip nhrp authentication DMVPN
+ ip nhrp authentication CYBER
  ip nhrp map multicast 69.18.20.2
+ ip nhrp map multicast 69.18.20.6
  ip nhrp map 172.18.10.1 69.18.20.2
+ ip nhrp map 172.19.10.1 69.18.20.6
  ip nhrp network-id 1
  ip nhrp nhs 172.18.10.1
+ ip nhrp nhs 172.19.10.1
  no ip split-horizon
  ip tcp adjust-mss 1300
  tunnel source Ethernet0/0
  tunnel mode gre multipoint
- tunnel key 10000
-!
-interface Tunnel1
- no shutdown
- ip address 172.19.10.2 255.255.255.0
- ip helper-address 172.17.0.10
- no ip redirects
- ip mtu 1400
- ip nhrp authentication DMVPN
- ip nhrp map multicast 69.18.20.6
- ip nhrp map 172.19.10.1 69.18.20.6
- ip nhrp network-id 2
- ip nhrp nhs 172.19.10.1
- ip tcp adjust-mss 1300
- tunnel source Ethernet0/0
- tunnel mode gre multipoint
- tunnel key 10000
+ tunnel key 1000
+ tunnel protection ipsec profile CYBER-DMVPN-PROFILE
 !
 interface Ethernet0/0
  no shutdown
@@ -42,7 +62,6 @@ interface Ethernet0/1
  ip address 10.10.10.1 255.255.255.0
  duplex auto
 
-ip route 0.0.0.0 0.0.0.0 69.18.20.25
 !
 username admin password cisco
 line con 0
